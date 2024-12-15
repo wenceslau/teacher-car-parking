@@ -1,4 +1,4 @@
-package com.wenceslau.v4.infrastructure.api;
+package com.wenceslau.v4.infraestrutura.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

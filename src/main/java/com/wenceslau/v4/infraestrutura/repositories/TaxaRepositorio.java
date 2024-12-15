@@ -1,4 +1,4 @@
-package com.wenceslau.v4.infrastructure.repositories;
+package com.wenceslau.v4.infraestrutura.repositories;
 
 import java.util.Map;
 

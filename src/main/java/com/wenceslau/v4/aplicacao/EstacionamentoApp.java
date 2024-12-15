@@ -4,7 +4,7 @@ import com.wenceslau.v4.domain.Veiculo;
 import com.wenceslau.v4.domain.VeiculoEstacionamento;
 import com.wenceslau.v4.domain.VeiculoRegistro;
 import com.wenceslau.v4.domain.VeiculoTipo;
-import com.wenceslau.v4.infrastructure.repositories.TaxaRepositorio;
+import com.wenceslau.v4.infraestrutura.repositories.TaxaRepositorio;
 
 public class EstacionamentoApp {
 

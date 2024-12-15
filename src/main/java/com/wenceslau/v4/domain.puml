@@ -1,0 +1,74 @@
+@startuml
+enum domain.VeiculoTipo {
++  CARRO
++  MOTO
++  PICKUP
++  BIKE
++ Veiculo getVeiculo()
++ {static} VeiculoTipo conversor(String)
+}
+
+
+class domain.veiculos.Moto {
+# double valorPagar(long)
+}
+
+class domain.veiculos.Bike {
+# double valorPagar(long)
+}
+
+class domain.VeiculoRegistro {
+- Veiculo veiculo
+- LocalDateTime horaEntrada
+- LocalDateTime horaSaida
+- Duration duracao
+- double valorPagar
++ void setHoraSaida(LocalDateTime)
++ Veiculo getVehicle()
++ LocalDateTime getHoraEntrada()
++ LocalDateTime getHoraSaida()
++ Duration getDuracao()
++ double getValorPagar()
+- void validar()
+}
+
+
+abstract class domain.Veiculo {
+- String placa
+- double taxa
++ String getPlaca()
++ void setPlaca(String)
++ double getTaxa()
++ void setTaxa(double)
++ void validar()
+# {abstract}double valorPagar(long)
+}
+
+
+class domain.veiculos.Pickup {
+# double valorPagar(long)
+}
+
+class domain.veiculos.Carro {
+# double valorPagar(long)
+}
+
+class domain.VeiculoEstacionamento {
+- int capacidade
+- List<VeiculoRegistro> registros
++ VeiculoRegistro registrarVeiculo(Veiculo)
+- Optional<VeiculoRegistro> procurarRegistro(Veiculo)
+- VeiculoRegistro registrarEntrada(Veiculo)
+- VeiculoRegistro registrarSaida(VeiculoRegistro)
++ List<VeiculoRegistro> getRegistros()
++ int getCapacidade()
+}
+
+
+
+
+domain.Veiculo <|-- domain.veiculos.Moto
+domain.Veiculo <|-- domain.veiculos.Bike
+domain.Veiculo <|-- domain.veiculos.Pickup
+domain.Veiculo <|-- domain.veiculos.Carro
+@enduml

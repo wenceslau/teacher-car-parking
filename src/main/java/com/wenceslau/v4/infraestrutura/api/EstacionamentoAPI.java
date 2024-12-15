@@ -1,10 +1,10 @@
-package com.wenceslau.v4.infrastructure.api;
+package com.wenceslau.v4.infraestrutura.api;
 
 import com.wenceslau.v4.aplicacao.EstacionamentoApp;
 import com.wenceslau.v4.aplicacao.RelatorioApp;
 import com.wenceslau.v4.domain.VeiculoEstacionamento;
-import com.wenceslau.v4.infrastructure.api.records.Apresentacao;
-import com.wenceslau.v4.infrastructure.repositories.TaxaRepositorio;
+import com.wenceslau.v4.infraestrutura.api.records.Apresentacao;
+import com.wenceslau.v4.infraestrutura.repositories.TaxaRepositorio;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

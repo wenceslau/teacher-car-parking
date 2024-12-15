@@ -1,10 +1,10 @@
-package com.wenceslau.v4.infrastructure.cmd;
+package com.wenceslau.v4.infraestrutura.cmd;
 
 import com.wenceslau.v4.aplicacao.EstacionamentoApp;
 import com.wenceslau.v4.aplicacao.RelatorioApp;
 import com.wenceslau.v4.domain.VeiculoEstacionamento;
 import com.wenceslau.v4.domain.VeiculoRegistro;
-import com.wenceslau.v4.infrastructure.repositories.TaxaRepositorio;
+import com.wenceslau.v4.infraestrutura.repositories.TaxaRepositorio;
 
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
