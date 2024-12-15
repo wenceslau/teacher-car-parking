@@ -4,6 +4,7 @@ import com.wenceslau.v5.english.application.ParkingApp;
 import com.wenceslau.v5.english.application.ReportApp;
 import com.wenceslau.v5.english.domain.VehicleParking;
 import com.wenceslau.v5.english.domain.VehicleRegistration;
+import com.wenceslau.v5.english.infrastructure.repositories.ParkingRepository;
 import com.wenceslau.v5.english.infrastructure.repositories.RateRepository;
 
 import java.time.format.DateTimeFormatter;
@@ -19,8 +20,9 @@ public class ParkingCMD {
 
         var vehicleParking = new VehicleParking(capacity);
         var rateRepository = new RateRepository();
+        var parkingRepository = new ParkingRepository();
 
-        var parking = new ParkingApp(vehicleParking, rateRepository);
+        var parking = new ParkingApp(vehicleParking, rateRepository, parkingRepository);
         var report = new ReportApp(vehicleParking);
 
         String option;
