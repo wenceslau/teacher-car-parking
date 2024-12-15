@@ -10,7 +10,7 @@ public class VeiculoRegistro {
 
     private LocalDateTime horaSaida;
     private Duration duracao;
-    private double valorPagar;
+    private Double valorPagar;
 
     public VeiculoRegistro(Veiculo veiculo, LocalDateTime horaEntrada) {
         this.veiculo = veiculo;
@@ -48,7 +48,7 @@ public class VeiculoRegistro {
         return duracao;
     }
 
-    public double getValorPagar() {
+    public Double getValorPagar() {
         return valorPagar;
     }
 

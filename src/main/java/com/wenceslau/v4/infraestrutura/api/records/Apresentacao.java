@@ -76,10 +76,10 @@ public final class Apresentacao {
 
         var reportResponse = construirRelatorioResponse(vehiclesParked, checkoutReport);
 
-        var type = "CheckIn";
+        var type = "Entrada";
         Long duration = null;
         if (veiculoRegistro.getHoraSaida() != null) {
-            type = "CheckOut";
+            type = "Saida";
             duration = veiculoRegistro.getDuracao().toMinutes();
         }
         String className = veiculoRegistro.getVehicle().getClass().getSimpleName().toUpperCase();

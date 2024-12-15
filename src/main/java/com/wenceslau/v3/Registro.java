@@ -5,8 +5,9 @@ import java.time.LocalDateTime;
 
 public class Registro {
 
-    private Veiculo veiculo;
-    private LocalDateTime entrada;
+    private final Veiculo veiculo;
+    private final LocalDateTime entrada;
+
     private LocalDateTime saida;
     private Duration duracao;
     private double valor;

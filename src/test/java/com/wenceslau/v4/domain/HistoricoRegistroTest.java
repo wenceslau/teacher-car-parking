@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class VeiculoRegistroTest {
+class HistoricoRegistroTest {
 
     @Test
     void dadoVeiculoRegistroValido_quandoValidar_entaoNaoDeveLancarExcecao() {

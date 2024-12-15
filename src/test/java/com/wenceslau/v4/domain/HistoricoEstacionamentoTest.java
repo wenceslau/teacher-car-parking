@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class VeiculoEstacionamentoTest {
+class HistoricoEstacionamentoTest {
 
     @Test
     void dadoVeiculoNaoEstacionado_quandoEstacionar_entaoVeiculoEstacionado() {

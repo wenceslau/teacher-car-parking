@@ -1,12 +1,12 @@
 package com.wenceslau.v2;
 
-public class Veiculo {
+public class Historico {
 
     private String placa;
     private long tempo;
     private double valor;
 
-    public Veiculo(String placa, long tempo, double valor) {
+    public Historico(String placa, long tempo, double valor) {
         this.placa = placa;
         this.tempo = tempo;
         this.valor = valor;

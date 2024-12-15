@@ -16,7 +16,7 @@ public class Estacionamento {
         //Declara as variaveis a serem usadas no sistema
         String logsSaidas = "";
         String[] placas = new String[capacidade];
-        LocalDateTime[] tempos = new LocalDateTime[capacidade];
+        LocalDateTime[] horasEntrada = new LocalDateTime[capacidade];
 
         String option;
         do {
@@ -30,7 +30,7 @@ public class Estacionamento {
                 case "1":
                     System.out.println("Informe o número de placa");
                     String placa = ler.next();
-                    aplicacao(placa, placas, tempos, logsSaidas);
+                    aplicacao(placa, placas, horasEntrada, logsSaidas);
                     break;
                 case "0":
                     System.exit(0);
@@ -41,25 +41,25 @@ public class Estacionamento {
         } while (true);
     }
 
-    public static void aplicacao(String placa, String[] placas, LocalDateTime[] tempos, String logsSaidas) {
+    public static void aplicacao(String placa, String[] placas, LocalDateTime[] horasEntrada, String logsSaidas) {
 
         //verifica se a placa ja existe, se, existir o processo é de saida
         int posicao = verificarPlaca(placa, placas);
 
         //igual a -1, placa nao existe
         if (posicao == -1) {
-            entradaVeiculo(placa, placas, tempos);
+            entradaVeiculo(placa, placas, horasEntrada);
 
         } else {
-            logsSaidas = saidaVeiculo(posicao,  placas, tempos, logsSaidas);
+            logsSaidas = saidaVeiculo(posicao,  placas, horasEntrada, logsSaidas);
 
         }
-        imprimirRelatorio( placas, tempos, logsSaidas);
+        imprimirRelatorio( placas, horasEntrada, logsSaidas);
 
     }
 
     private static int verificarPlaca(String placaEntrada, String[] placas) {
-        //percorre todo array de placa ate achar a placa de entrada
+        //percorre o array de placa ate achar a placa de entrada
         for (int i = 0; i < placas.length; i++) {
             String placa = placas[i];
             if (placa != null) {
@@ -71,7 +71,7 @@ public class Estacionamento {
         return -1;
     }
 
-    private static void entradaVeiculo(String placa, String[] placas, LocalDateTime[] tempos) {
+    private static void entradaVeiculo(String placa, String[] placas, LocalDateTime[] horasEntrada) {
 
         int posicaoLivre = posicaoLivre(placas);
 
@@ -79,19 +79,19 @@ public class Estacionamento {
         if (posicaoLivre == -1) {
             System.err.println("Não ha vagas");
         } else {
-            //Hora da entrada e a posiçao livre do array
+            //Hora da entrada na posiçao livre do array
             LocalDateTime entrada = LocalDateTime.now();
 
-            //Guarda a placa e a hora entrada no array
+            //Guarda a placa e a hora entrada nos array
             placas[posicaoLivre] = placa;
-            tempos[posicaoLivre] = entrada;
+            horasEntrada[posicaoLivre] = entrada;
 
             System.out.printf("Entrada do veículo de placa: %s realizada.%n", placa);
         }
     }
 
     private static int posicaoLivre(String[] array) {
-        //percorre todo array verifica qual a primeira posicao livre do array
+        //percorre o array verifica qual a primeira posicao livre do array
         //se nao tiver posicao livre retorna -1, indica estacioamento lotado
         for (int i = 0; i < array.length; i++) {
             String placa = array[i];
@@ -102,10 +102,10 @@ public class Estacionamento {
         return -1;
     }
 
-    private static String saidaVeiculo(int posicao, String[] placas, LocalDateTime[] tempos, String logsSaidas) {
+    private static String saidaVeiculo(int posicao, String[] placas, LocalDateTime[] horasEntrada, String logsSaidas) {
 
         String placa = placas[posicao];
-        LocalDateTime entrada = tempos[posicao];
+        LocalDateTime entrada = horasEntrada[posicao];
         LocalDateTime saida = LocalDateTime.now();
 
         //Calcula o tempo em minutos que o veiculo permaneceu, e o valor a pagar
@@ -121,12 +121,12 @@ public class Estacionamento {
 
         logsSaidas += historico;
         placas[posicao] = null;
-        tempos[posicao] = null;
+        horasEntrada[posicao] = null;
 
         return logsSaidas;
     }
 
-    private static void imprimirRelatorio(String[] placas, LocalDateTime[] tempos, String logsSaidas) {
+    private static void imprimirRelatorio(String[] placas, LocalDateTime[] horasEntrada, String logsSaidas) {
         System.out.println("_______________________________________________________________________________");
         System.out.println("VEICULOS ESTACIONADOS: ");
 
@@ -136,7 +136,7 @@ public class Estacionamento {
             if (placa == null){
                 continue;
             }
-            LocalDateTime dataHoraEntrada = tempos[i];
+            LocalDateTime dataHoraEntrada = horasEntrada[i];
             String dataFormatada = dataHoraEntrada.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
             System.out.printf("\tPlaca %s \t Hora de entrada: %s %n", placa, dataFormatada);
         }

@@ -8,9 +8,9 @@ import java.util.HashMap;
 
 public class Estacionamento {
 
-    private int capacidade;
-    private HashMap<String, LocalDateTime> veiculosAtuais;
-    private ArrayList<Veiculo> historico;
+    private final int capacidade;
+    private final HashMap<String, LocalDateTime> veiculosAtuais;
+    private final ArrayList<Historico> historico;
 
     public Estacionamento(int capacidade) {
         this.capacidade = capacidade;
@@ -49,7 +49,7 @@ public class Estacionamento {
         System.out.printf("Saída do veículo de placa: %s. Tempo no estabelecimento: %d minutos. Valor a ser cobrado: R$ %.2f %n",
                 placa, minutosPermanencia, valorCobrado);
 
-        historico.add(new Veiculo(placa, minutosPermanencia, valorCobrado));
+        historico.add(new Historico(placa, minutosPermanencia, valorCobrado));
     }
 
     private double calcularValor(long minutos) {
@@ -78,7 +78,7 @@ public class Estacionamento {
         System.out.println();
         System.out.println("REGISTROS DE SAIDAS: ");
 
-        for (Veiculo veiculo : historico) {
+        for (Historico veiculo : historico) {
             String historico = String.format("\tPlaca %s - tempo permanência: %d minutos - valor cobrado: %.2f %n",
                     veiculo.getPlaca(), veiculo.getTempo(), veiculo.getValor());
             System.out.println(historico);

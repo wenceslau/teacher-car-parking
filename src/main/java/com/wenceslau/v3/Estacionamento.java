@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Estacionamento {
 
-    private int capacidade;
-    private List<Registro> registros = new ArrayList<>();
+    private final int capacidade;
+    private final List<Registro> registros = new ArrayList<>();
 
     public Estacionamento(int capacidade) {
         this.capacidade = capacidade;
