@@ -26,7 +26,7 @@ public class EstacionamentoAPI {
 
             return ResponseEntity
                     .ok()
-                    .body(Apresentacao.construirCriarResponse(capacity));
+                    .body(Apresentacao.construirCriarResponseString(capacity));
         } catch (Exception e) {
             return ResponseEntity
                     .badRequest()
@@ -44,7 +44,7 @@ public class EstacionamentoAPI {
 
             return ResponseEntity
                     .ok()
-                    .body(Apresentacao.construirRegistrarResponse(veiculoRegistro, veiculosEstacionados, registrosSaidas));
+                    .body(Apresentacao.construirRegistrarResponseString(veiculoRegistro, veiculosEstacionados, registrosSaidas));
         } catch (Exception e) {
             return ResponseEntity
                     .badRequest()

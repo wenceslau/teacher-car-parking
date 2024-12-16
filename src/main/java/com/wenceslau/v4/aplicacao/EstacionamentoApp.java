@@ -11,7 +11,8 @@ public class EstacionamentoApp {
     private final VeiculoEstacionamento veiculoEstacionamento;
     private final TaxaRepositorio taxaRepositorio;
 
-    public EstacionamentoApp(VeiculoEstacionamento veiculoEstacionamento, TaxaRepositorio taxaRepositorio) {
+    public EstacionamentoApp(VeiculoEstacionamento veiculoEstacionamento,
+                             TaxaRepositorio taxaRepositorio) {
         this.veiculoEstacionamento = veiculoEstacionamento;
         this.taxaRepositorio = taxaRepositorio;
     }

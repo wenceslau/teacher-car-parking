@@ -1,0 +1,17 @@
+
+Desafio Estacionamento
+
+v1 - Codigo procedural usando metodos estaticos e variaveis de escopo de metodos
+
+v2 - Primeiro estagio do uso de OO, com a criação de classes e metodos de instancia
+     mas ainda com acoplamento, usando println dentro das classes para exibir mensagens
+
+v3 - Segundo estagio do uso de OO, maior detalhes nas classes para controle os dados
+     Menos de acoplamento, sem uso de printl dentro das classes para exibir mensagens
+
+v4 - Terceiro estagio do uso de OO
+     Separação em camadas. Dominio, Infraestrutura e Aplicação
+     Uso de interfaces para tonar o dominio extensivel e flexivel
+     Duas implementação de interação com o usuario, uma via console e outra via API rest
+     Uso de um repositorio para recuperar os dados sobre regras do negocio
+     Exemplos de testes unitarios sobre o dominio

@@ -21,7 +21,9 @@ class HistoricoEstacionamentoTest {
         veiculoEstacionamento.registrarVeiculo(veiculo);
 
         // então
-        assertTrue(veiculoEstacionamento.getRegistros().stream().anyMatch(r -> r.getVehicle().getPlaca().equals(veiculo.getPlaca())));
+        assertTrue(veiculoEstacionamento.getRegistros()
+                .stream()
+                .anyMatch(r -> r.getVehicle().getPlaca().equals(veiculo.getPlaca())));
     }
 
 }

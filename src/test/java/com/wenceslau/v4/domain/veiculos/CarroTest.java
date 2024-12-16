@@ -32,7 +32,7 @@ class CarroTest {
     void dadoCarroComValoresValidos_entaoNaoDeveLancarExcecao() {
         // dado
         Carro carro = new Carro();
-        carro.setPlaca("ABC-1234");
+        carro.setPlaca("ABC1234");
         carro.setTaxa(1.0);
 
         // quando / então

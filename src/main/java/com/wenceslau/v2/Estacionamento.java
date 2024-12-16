@@ -29,8 +29,6 @@ public class Estacionamento {
         } else {
             registrarEntrada(placa);
         }
-
-        veiculosAtuais.put(placa, LocalDateTime.now());
     }
 
     private void registrarEntrada(String placa) {

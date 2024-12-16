@@ -10,6 +10,9 @@ public class Estacionamento {
     private final List<Registro> registros = new ArrayList<>();
 
     public Estacionamento(int capacidade) {
+        if (capacidade <= 0) {
+            throw new IllegalArgumentException("Capacidade deve ser maior que zero");
+        }
         this.capacidade = capacidade;
     }
 

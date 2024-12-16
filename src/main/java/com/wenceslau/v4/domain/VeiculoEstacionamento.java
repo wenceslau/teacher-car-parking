@@ -30,11 +30,12 @@ public class VeiculoEstacionamento {
                 .map(x -> registrarSaida(x))
                 .orElseGet(() -> registrarEntrada(veiculo));
 
-        //if (optional.isEmpty()) {
-        //    return checkInVehicle(vehicle);
-        //}else {
-        //    return checkOutVehicle(optional.get());
-        //}
+//        if (optional.isEmpty()) {
+//            return registrarEntrada(veiculo);
+//        }else {
+//            VeiculoRegistro registro = optional.get();
+//            return registrarSaida(registro);
+//        }
     }
 
     private Optional<VeiculoRegistro> procurarRegistro(Veiculo veiculo) {
@@ -47,7 +48,8 @@ public class VeiculoEstacionamento {
     private VeiculoRegistro registrarEntrada(Veiculo veiculo) {
         int count = registros.stream()
                 .filter(r -> r.getHoraSaida() == null)
-                .mapToInt(r -> 1).sum();
+                .mapToInt(r -> 1)
+                .sum();
 
         if (count == capacidade) {
             throw new IllegalStateException("Parking lot is full");

@@ -16,6 +16,9 @@ public class Registro {
         if (entrada == null) {
             throw new IllegalArgumentException("Entrada não pode ser nula");
         }
+        if (veiculo == null) {
+            throw new IllegalArgumentException("Veiculo não pode ser nulo");
+        }
         this.veiculo = veiculo;
         this.entrada = entrada;
     }

@@ -102,7 +102,8 @@ public class Estacionamento {
         return -1;
     }
 
-    private static String saidaVeiculo(int posicao, String[] placas, LocalDateTime[] horasEntrada, String logsSaidas) {
+    private static String saidaVeiculo(int posicao, String[] placas, LocalDateTime[] horasEntrada,
+                                       String logsSaidas) {
 
         String placa = placas[posicao];
         LocalDateTime entrada = horasEntrada[posicao];

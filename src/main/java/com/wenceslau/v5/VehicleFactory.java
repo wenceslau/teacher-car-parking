@@ -7,7 +7,6 @@ package com.wenceslau.v5;
 
 import com.wenceslau.v4.domain.Veiculo;
 import com.wenceslau.v4.domain.VeiculoTipo;
-import com.wenceslau.v4.domain.veiculos.Bike;
 import com.wenceslau.v4.domain.veiculos.Carro;
 import com.wenceslau.v4.domain.veiculos.Moto;
 import com.wenceslau.v4.domain.veiculos.Pickup;
@@ -22,8 +21,7 @@ public final class VehicleFactory {
     private static final Map<String, Veiculo> vehicles = Map.of(
             "CAR", new Carro(),
             "MOTORCYCLE", new Moto(),
-            "TRUCK", new Pickup(),
-            "BICYCLE", new Bike()
+            "TRUCK", new Pickup()
     );
 
     public static Veiculo createVehicleMap(String vehicleType) {
@@ -35,7 +33,6 @@ public final class VehicleFactory {
             case "CAR" -> new Carro();
             case "MOTORCYCLE" -> new Moto();
             case "TRUCK" -> new Pickup();
-            case "BICYCLE" -> new Bike();
             default -> throw new IllegalArgumentException("Invalid vehicle type");
         };
     }
