@@ -17,16 +17,16 @@ public class EstacionamentoAPI {
     private RelatorioApp relatorioApp;
 
     @PostMapping("/criar/{capacity}")
-    public ResponseEntity<?> criar(@PathVariable int capacity) {
+    public ResponseEntity<?> criar(@PathVariable int capacidade) {
 
         try {
-            VeiculoEstacionamento veiculoEstacionamento = new VeiculoEstacionamento(capacity);
+            VeiculoEstacionamento veiculoEstacionamento = new VeiculoEstacionamento(capacidade);
             estacionamentoApp = new EstacionamentoApp(veiculoEstacionamento, taxaRepositorio);
             relatorioApp = new RelatorioApp(veiculoEstacionamento);
 
             return ResponseEntity
                     .ok()
-                    .body(Apresentacao.construirCriarResponseString(capacity));
+                    .body(Apresentacao.construirCriarResponseString(capacidade));
         } catch (Exception e) {
             return ResponseEntity
                     .badRequest()
